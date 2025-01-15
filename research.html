@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Research</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Research Lab, Home, University of Calgary">
+      <meta name="author" content="">
+      <!-- Le styles -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+      <link href="css/theme.css" rel="stylesheet">
+   </head>
+   <body>
+      <div class="container">
+         <header class="jumbotron subhead" id="overview">
+            <p class="lead"> University of Calgary </p>
+            <h1>Geospatial Sensing and Intelligence Lab</h1>
+         </header>
+         <div class="masthead">
+            <div class="navbar">
+               <div class="navbar-inner">
+                  <div class="container">
+                     <ul class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="people.html">People</a></li>
+                        <li class="active"><a href="#">Research</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="teaching.html">Teaching</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <hr>
+         <div class="row-fluid">
+            <div class="span3 bs-docs-sidebar" id="navparent">
+               <ul class="nav nav-list bs-docs-sidenav" data-spy="affix" data-offset-top="200" data-offset-bottom="260">
+                  <li><a href="#statemet"> Research Statement </a></li>
+                  <li><a href="#hyperspectral"> Hyperspectral Environmental Remote Sensing </a></li>
+                  <li><a class="subhead" href="#analytics"> Intelligent Hyperspectral Analytics </a></li>
+                  <li><a class="subhead" href="#camera"> Lost-cost DIY hyperspectral camera and AI software  </a></li>
+                  <li><a href="#sar">SAR and Optical Remote Sensing of Canadian Water and Ice Environment</a></li>
+                  <li><a class="subhead" href="#ice"> Pan-Arctic sea ice mapping and prediction </a></li>
+                  <li><a class="subhead" href="#oil"> Marine oil spill monitoring </a></li>
+                  <li><a class="subhead" href="#whale"> Arctic species detection </a></li>
+                  <li><a href="#lidar">Intelligent LiDAR Processing and Analysis</a></li>
+                  <li><a href="#wildfire">AI-powered Wildfire Risk Prediction</a></li>
+                  <!--
+		  <li><a href="#references">References</a></li>
+                  <li><a href="#FacilitiesandEquipment">Facilities and Equipment</a></li>
+		  -->
+                  
+               </ul>
+            </div>
+            <div class="span8 offset1">
+               <section id="statemet">
+                  <div class="page-header">
+                     <h3>Research Statement</h3>
+                     <hr>
+                     <p>
+                        With substantial investment in sensor development and platform deployment, the Remote Sensing (RS) industry has grown into a billion-dollar
+                        global market, and is still on the verge of a massive growth spurt. An increasing number of government agencies, research institutions and 
+                        commercial companies leverage the big RS data to advance climate change and environment monitoring applications. 
+		     </p>
+		     <p>
+			Nevertheless, 
+                        the application of the big and ever-increasing RS data is bottlenecked by the limited ability of data processing techniques and software 
+                        tools to effectively transform the data into value-added information, products and services. 
+		     </p>
+		     <p>			     
+			Therefore, the development of advanced AI 
+                        and machine learning (ML) techniques that can effectively and efficiently derive meaningful information from RS data can greatly expand 
+                        and enhance the applications of big RS data, improve the decision-making in climate change and environmental applications, 
+                        enlarge the RS market with various new business models and customers, and create tremendous opportunities and growth for 
+                        RS and geospatial industries.
+                     </p>
+                     <p>
+                        In GSIL, we focus on the development 
+                        of advanced AI & ML algorithms, models and systems for computer-aided processing and analysis of RS data to efficiently and 
+                        effectively extract the weak, subtle and changing information from big complex RS data that can better support 
+                        many environmental monitoring and climate change applications. 
+
+                     </p>
+                  </div>
+               </section>
+               <section id="hyperspectral">
+                  <div class="page-header">
+                     <h3> Hyperspectral Environmental Remote Sensing </h3>
+                     
+		     <br/>
+                     <img src="images/hyperspectral.png" class="float-right" alt="Penatibus" style="width: 400px; height: auto;"/>
+		
+		     <!--
+		     <figure class="float-right">
+  			<img src="images/hyperspectral.png" alt="Penatibus" style="width: 400px; height: auto;"  />
+  			<figcaption>eoportal.org</figcaption>
+		     </figure>
+		     -->
+			  
+                     <p>
+                        Hyperspectral imaging, which records the reflected radiation from the earth 
+                        surface using hundreds of narrow spectral bands, can provide rich information 
+                	for identifying and distinguishing spectrally-similar materials, and has 
+                        become an essential tool leveraged by research scientists and operational users 
+                        to retrieve key parameters (e.g., biochemical, biophysical and geochemical parameters) 
+                        in various environmental monitoring and resource exploration applications. 
+			  
+                     </p>
+		      <p>
+                        Nevertheless, due to the large data volume, the innate high­-dimensionality, 
+                        spatial­-spectral heterogeneities and the noise effect of hyperspectral image (HSI), 
+                        there are significant challenges for users to efficiently and accurately transform 
+                        HSI into value­-added information. To address these challenges, 
+                        I and my HQPs have been developing novel ML, DL and spectral analysis models and methods 
+                        for achieving computer­-aided processing and analysis of the large­-volume complex 
+                        HSI that can significantly improve the quantification of valuable bio/geo-variables, 
+                        and thereby improve environmental monitoring and resource exploration. 
+
+                     </p>
+			  
+                  </div>
+                  <div class="row-fluid">
+                     <div class="span12">
+                        <section id="analytics">
+                           <h4>Intelligent Hyperspectral Analytics</h4>
+                           <p>
+                              We develop novel DL/ML and spectral analysis models to improve many different HSI processing tasks, 
+                              e.g., HSI classification, spectral unmixing, HSI denoising, feature extraction and visualization. 
+                              We implement these algorithms into advanced HSI software tools to facilitate the development 
+                              of data processing workflows, pipelines and analytic solutions to key HSI applications.
+                              We use UAV/drone hyperspectral systems with Cubert UHD185 and Resonon Pika XC2 hyperspectral cameras to collect HSI on 
+                              vegetated and industrial areas for vegetation monitoring and pollution investigation. 
+                              We use the PRISMA satellite hyperspectral images for mineral and vegetation mapping. 
+                              We develop data processing pipelines to improve the processing and analysis of UAV and satellite hyperspectral imaging data. 
+                              We develop hyperspectral cameras based on the openHSI project https://openhsi.github.io/. 
+                              We collaborate with Canadian industries, e.g., SkyWatch in Kitchener, to help them build intelligent analytics 
+                              that can efficiently and accurately generate information products in crop mapping, mineral exploration 
+                              and methane emission monitoring applications.  
+                              We have been and will continue publishing on high-rank remote sensing journals and conferences, 
+                              and developing intelligent HSI analytics to improve environmental monitoring and resource exploration 
+                              applications in Canadian industries in a fast-growing hyperspectral remote sensing market.   
+                           </p>
+                        </section>
+                        <hr>
+                        <section id="camera">
+                           <h4>Lost-cost DIY hyperspectral camera and AI software</h4>
+                           <br/>
+                           <img src="images/openhsi_cam.png" class="float-right" alt="Penatibus" style="width: 300px; height: auto;" />
+                           <p>
+                              We develop low-cost DIY hyperspectral cameras based on the openHSI project https://openhsi.github.io/. 
+			      We design indoor benchtop hyperspectral imaging system to support smart factory, machine vision and industrial inspection
+				   applications in food, garbage inspection and mining industries. 
+			      We deisgn outdoor UAV hyperspectral imaging system by integrating the DIY camera with other sensors, e.g., GPU, IMU and LiDAR,
+				   to better support various environmental monitoring applications, e.g., precision agriculture and forestry, 
+				   water quality monitoring and resource exploration. 
+			      Based on our strong experties on spectral analysis and AI, we design AI-powered software systems, leading to integrated
+				   intelligent hyperspectral systems that can achieve fast and accurate processing of big hyperspectral data in the 
+				   above-mentioned applications. 
+                           </p>
+                        </section>
+                     </div>
+                     
+                  </div>
+               </section>
+               <hr>
+               <section id="sar">
+                  <div class="page-header">
+                     <h3>SAR and Optical Remote Sensing of Canadian Water and Ice Environment</h3>
+			<p>
+                              Satelliet synthetic aperture radar (SAR) and airborne high-resolution optical images have been 
+                              widely used in the monitoring of the Canadian water and Northern ice environment to support many 
+                              critical applications, e.g., e.g., climate change studies, coastal environmental management, 
+                              indigenous communities, and Arctic shipping route planning and navigation. Nevertheless, 
+                              efficient extraction of sea/lake ice, oil spill and whale information from these images is 
+                              difficult due to many challenges, such as large data volume, noise effects, the complex marine environment, 
+                              and weak signatures of targets. To address these challenges, I and my HQPs have been using advanced ML 
+                              and deep learning (DL) techniques to develop advanced image processing models and algorithms to better 
+                              support sea/lake ice mapping, oil spills monitoring and whale detection. 
+                        </p>
+                  </div>
+                  <div class="row-fluid">
+                     <div class="span12">
+                        <section id="ice">
+                           <h4>Pan-Arctic sea ice mapping and prediction software system</h4>
+                           <br/>
+                           <img src="images/sea_ice_applications.png" class="float-right" alt="Volutpat" style="width: 700px; height: auto;" />
+			  <p>
+			     The monitoring and mapping of Arctic sea ice is not only critical for climate change studies 
+				  and Arctic ship navigation, and but also critical for protecting the fragile Arctic ecosystem. 
+				  Arctic is home to a unique and fragile ecosystem that is highly sensitive to changes 
+				  in the ice cover. As the ice melts, it disrupts the food chain and habitat of many species, 
+				  including polar bears, seals, and walruses while also affecting the lives and traditions 
+				  of indigenous communities residing in the region. 
+				  So, monitoring Arctic sea ice can help us to better understand how climate change is 
+				  affecting this sensitive region, and how to better mitigate its impact. 
+                           </p>
+                           <p>
+                              For SAR sea/lake ice mapping, we develop advanced DL and image analysis algorithms for improving SAR image denoising, 
+                              SAR image segmentation and object-based SAR image classification that enable a complete data processing pipeline 
+                              for large-scale high-resolution daily Pan-Arctic SAR ice mapping. Our advanced AI algorithms enabled us to win the 
+                              1st place in the AutoICE competition, which is one of the AI4EO challenges (https://platform.ai4eo.eu/auto-ice ) 
+                              organized by the European Space Agency (ESA), aiming to improve operation sea ice charting using AI. 
+                           </p>
+                           <p>
+                              We have been and will continue publishing on high-rank remote sensing journals and conferences, 
+                              implementing designed algorithms into software tools to help companies (e.g., WhaleSeeker) 
+                              and government agencies, e.g, Canadian Ice Service (CIS), Department of Fisheries and Oceans (DFO), 
+                              and indigenous communities, e.g., the Indigenous Knowledge Social Network (SIKU), in operational sea/lake ice mapping, 
+                              oil spills monitoring and whale counting. 
+
+                           </p>
+                        </section>
+                        <hr>
+                        <section id="oil">
+                           <h4>Marine oil spills detection system </h4>
+                           <br/>
+                           <img src="images/oil_spill_applications.png" class="float-right" alt="Elementum Tempus" style="width: 700px; height: auto;"/>
+			   <p>
+			    Marine oil spills are produced by tankers or drilling platforms, which can be accidental or deliberate. 
+				   The presence of oil spills pollute the sea water, destroy wildlife habitat and breedingground, 
+				   and damage beaches, causing many social and ecological problems. 
+				   Canada borders three oceans and owns the world’s longest coastline, 
+				   and as such is particularly vulnerable to oil spill pollutions. 
+				   Significant efforts have been undertaken to improve Canada’s ability in 
+				   marine oil spills monitoring and quick response. For example, in year 2016, 
+				   the federal government announced a $1.5 billion national Oceans Protection 
+				   Plan to improve responses to oil spills in Canadian oceans. 
+				   Addressing oil spill pollutions is one of its key objectives. 
+				   In 2022, the ocean protection plan was extended with a new budget of $2 billion 
+				   over the next nine years. These investments reflect the importance and 
+				   urgency of marine oil spill monitoring and response. 
+			   </p>
+
+                           <p>
+                              For SAR oil spill monitoring, we develop advanced ML and computer vision algorithms that 
+                              accurately identify the boundaries of the potential oil spills from ­noisy SAR imagery. 
+                              We compare and optimize different classifiers to improve the classification of true oil spills from 
+                              the "look­-alikes". We develop active learning and semi-supervised learning approaches 
+                              to improve model training using limited training samples. 
+                           </p>
+                        </section>
+                        <hr>
+                        <section id="whale">
+                           <h4>Arctic species detection system</h4>
+                           <br/>
+                           <img src="images/whale_applications.png" class="float-right" alt="Elementum Tempus" style="width: 400px; height: auto;"/>
+			   <p>
+				The beluga, also known as the white whale, is a toothed whale with a length of about 4 meters. 
+				Belugas are Arctic residents, migrating during the summer to coastal and offshore areas for feeding and giving birth.
+				   They face threats from predators like polar bears, killer whales, and Inuit hunters. 
+				Unfortunately, beluga populations have been declining due to uncontrolled hunting and environmental degradation. 
+				To effectively manage human and environmental impacts, it is crucial to monitor beluga numbers and population trends.
+				   The Department of Fisheries and Oceans (DFO) conducts aerial surveys using optical 
+				   cameras during the summer. Each survey lead to tens of thousands images. 
+				   The task of identifying belugas in the images is challenging and time-consuming 
+				   due to the large volume of images and the small and subtle signature of the whales. 
+				   We have been designing advanced DL-based small object detection 
+                              algorithms that improve the identification of whales and other Arctic species from high-resolution airborne optical images. 
+                           </p>
+                           <!--
+                           <ol class="resources">
+                              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                 incididunt ut labore et dolore magna aliqua. p. 413-417, 2010.
+                              </li>
+                              <li>Sed ullamcorper morbi tincidunt ornare massa eget egestas. Suscipit tellus mauris 
+                                 a diam. Facilisis magna etiam tempor orci eu lobortis elementum nibh tellus.  
+                              </li>
+                              <li>Tellus molestie nunc non blandit massa enim nec dui. Eget duis at tellus at urna 
+                                 condimentum mattis pellentesque id. At urna condimentum mattis pellentesque id nibh 
+                                 tortor. Placerat duis ultricies lacus sed turpis tincidunt id aliquet risus. 
+                              </li>
+                              <li>Laoreet non curabitur gravida arcu ac. Ultricies tristique nulla aliquet enim. Auctor 
+                                 elit sed vulputate mi. Pellentesque diam volutpat commodo sed egestas egestas fringilla. 
+                                 Eleifend donec pretium vulputate sapien nec sagittis. 38(5), p. 397-406, 2013.
+                              </li>
+                           </ol>
+			   -->
+                        </section>
+                     </div>
+                  </div>
+               </section>
+
+               <section id="lidar">
+                  <div class="page-header">
+                     <h3>Intelligent LiDAR Processing and Analysis</h3>
+                     <br/>
+                     <img src="images/lidar.jpg" class="float-right" alt="Elementum Tempus" style="width: 400px; height: auto;"/>
+                     <p>
+                        LiDAR has been widely used to measure the structures, position and geometry of ground targets 
+                        in many environmental applications. The processing and analysis of LiDAR 3D point cloud data, 
+                        as a fundamental task in 3D computer vision, is critical to support these LiDAR applications. 
+                        Deep neural network (DNN) models, due to their flexibility and strong feature learning capability, 
+                        have been widely used for improving key 3D point cloud processing tasks. I and my HQPs have been 
+                        exploring cutting-edge DNN models and methods for improving 3D point cloud processing and analysis 
+                        in different LiDAR applications. 
+                     </p>
+                     <p>
+                        I and my HQP develop novel hierarchical 3D Transformer Networks (3DCTN) to improve point cloud classification and segmentation. 
+                        This work has led to a journal paper published in August 2022 on arXiv and IEEE Transactions on Intelligent 
+                        Transportation Systems (IF: 9.551), and another paper submitted in Oct. 2023 to IEEE Transactions on Multimedia (IF: 8.182). 
+                        The above classification and segmentation models have enabled us to build a deep Transformer-based point cloud representation 
+                        framework, to improve other key 3D point cloud processing tasks, i.e., object detection, 3D reconstruction, 
+                        super-resolution and compression, towards building a complete toolbox for improving LiDAR 3D point cloud processing and analysis. 
+                        This work has led to a highly-cited paper published on arXiv (also submitted to IEEE PAMI), and another paper submitted in Nov. 
+                        2023 to Remote Sensing of Environment for tree species mapping with airborne multispectral LiDAR data. 
+                        We will continue publishing on high-rank journals and conferences, and developing intelligent 
+                        LiDAR analytics to improve environmental monitoring applications. We have been and will continue fusing 
+                        LiDAR with multispectral and hyperspectral data to improve accuracy. Particularly, we will use the intelligent 
+                        analytics to improve forest mapping and monitoring, to better support environmental impact evaluation, 
+                        land management, and fire prevention planning in Canada.
+                     </p>
+                  </div>
+               </section>
+
+               <section id="wildfire">
+                  <div class="page-header">
+                     <h3>AI-powered Wildfire Risk Prediction</h3>
+                     <br/>
+                     <img src="images/wildfire.png" class="float-right" alt="Elementum Tempus"/>
+                     <p>
+                        Supported by MITACS and BMO, this project aims to predict wildfire risk across Canada using 
+                        AI and heterogeneous datasets, which is critical for environmental management and disaster mitigation.
+                        By leveraging diverse data sources such as climate records, weather patterns, remote sensing data, 
+                        and historical wildfire occurrences, AI algorithms can discern subtle spatial-temporal patterns and 
+                        correlations, enabling more accurate and timely forecasts of wildfire outbreaks. This research aims 
+                        to improve the current state-of-the-art predictive capability, such that it empowers wildfire management 
+                        to minimize the devastating impact of wildfires on ecosystems, human settlements, and infrastructure. 
+                     </p>
+                  </div>
+               </section>
+               <!--
+               <section id="references">
+                  <h3>References</h3>
+                   <ol class="resources">
+			<li>Enright, R., et al., Dropwise Condensation on Micro- and Nanostructured Surfaces. Nanoscale and Microscale Thermophysical Engineering, 2014. 18(3): p. 223-250. </li>
+			<li>Hoque, M.J., et al., High-Throughput Stamping of Hybrid Functional Surfaces. Langmuir, 2020. 36(21): p. 5730-5744. </li>
+			<li>Oh, J., et al., Cicada-inspired self-cleaning superhydrophobic surfaces. Journal of Heat Transfer-Transactions of the Asme, 2019. 141(10). </li>
+			<li>Miljkovic, N. and E.N. Wang, Condensation heat transfer on superhydrophobic surfaces. Mrs Bulletin, 2013. 38(5): p. 397-406. </li>
+			<li>Miljkovic, N., et al., Liquid Evaporation on Superhydrophobic and Superhydrophilic Nanostructured Surfaces. Journal of Heat Transfer-Transactions of the Asme, 2011. 133(8). </li>
+			<li>Enright, R., et al., Condensation on Superhydrophobic Surfaces: The Role of Local Energy Barriers and Structure Length Scale. Langmuir, 2012. 28(40): p. 14424-14432. </li>
+			<li>Foulkes, T., et al., Self-assembled liquid bridge confined boiling on nanoengineered surfaces. International Journal of Heat and Mass Transfer, 2019. 133: p. 1154-1164. </li>
+			<li>Hoque, M.J., et al., Visualization of Droplet Nucleation on Patterned Hybrid Surfaces. Journal of Heat Transfer-Transactions of the Asme, 2019. 141(10). </li>
+			<li>Preston, D.J., et al., Effect of hydrocarbon adsorption on the wettability of rare earth oxide ceramics. Applied Physics Letters, 2014. 105(1). </li>
+			<li>Boyina, K., et al., Condensation frosting on meter-scale superhydrophobic and superhydrophilic heat exchangers. International Journal of Heat and Mass Transfer, 2019. 145(118694). </li>
+			<li>Cha, H., et al., Dropwise Condensation on Solid Hydrophilic Surfaces. Science Advances, 2019. in press. </li>
+			<li>Sett, S., et al., Stable Dropwise Condensation of Ethanol and Hexane on Rationally Designed Ultrascalable Nanostructured Lubricant-Infused Surfaces. Nano Letters, 2019. 19(8): p. 5287-5296. </li>
+			<li>Yan, X., et al., Hierarchical Condensation. Acs Nano, 2019. 13(7): p. 8169-8184. </li>
+			<li>Li, J.Q., et al., Ultrascalable Three-Tier Hierarchical Nanoengineered Surfaces for Optimized Boiling. Acs Nano, 2019. 13(12): p. 14080-14093. </li>
+			<li>Bhatia, B., et al., Nanoengineered Surfaces for Thermal Energy Conversion. 15th International Conference on Micro and Nanotechnology for Power Generation and Energy Conversion Applications (Powermems 2015), 2015. 660. </li>
+			<li>Voglar, J., et al., Analysis of heater-wall temperature distributions during the saturated pool boiling of water. Experimental Thermal and Fluid Science, 2019. 102: p. 205-214. </li>
+			<li>Oh, J., et al., Jumping-droplet electronics hot-spot cooling. Applied Physics Letters, 2017. 110(12). </li>
+			<li>Enright, R., et al., How Coalescing Droplets Jump. Acs Nano, 2014. 8(10): p. 10352-10362. </li>
+                        </ol>
+               </section>
+               
+               <section id="FacilitiesandEquipment">
+                  <div class="page-header">
+                     <h3>Facilities and Equipment</h3>
+                  </div>
+                  <p>
+                    The Energy Transport Research Laboratory has a lab area of 3000 ft <sup>2</sup> with
+					      access to a shared laminar fume hood room with 2 laminar fume hoods. The laboratory features
+					      state-of-the-art control, optical, diagnostics and thermal measurement capabilities that are regularly used
+					      and updated.
+				      </p>
+				      <p>
+                    For a full list of both custom equipment as well as characterization equipment in the 
+					   laboratory, please see the following <a href="equipment/ETRL Equipment_Aug_2020.pdf">PDF document</a>
+					   with detailed individual descriptions, purpose, and specifications included. 
+				      </p>
+				      <p>	 
+					      In addition to our own laboratory facilities linked above, a partial list of our facilities can be found
+					      <a href="https://acrc.mechse.illinois.edu/">here</a> with a few videos to demonstrate the operation.
+					      Furthermore, we are part of the POETS center, having access to additional world-class electro-thermal
+					      testbed facilities on the Illinois campus. For a list of POETS facilities, 
+					      see <a href="https://poets-erc.org/our-research/facilities-testbeds/">this link</a>.
+                  </p>
+				      <p>
+					      In addition, structured surface characterization will be performed at the <a href="https://mrl.illinois.edu/">Materials Research
+					      Laboratory (MRL)</a>, <a href="https://mechanical.illinois.edu/research/mechse-laboratories/micro-nano-mechanical-systems-mnms-cleanroom">Micro-Nano-Mechanical Systems Cleanroom (MNMS)</a>, 
+					      and the <a href="https://mntl.illinois.edu/facilities">Micro-Nano Technologies Laboratory (MNTL)</a>. 
+					      All three facilities are interdepartmental micro/nanofabrication and characterization facilities 
+					      on the University of Illinois campus.
+				      </p>
+               </section>
+
+	       -->
+               
+               <hr>
+            </div>
+         </div>
+      </div>
+      <footer id="footer">
+         <div class="container-fluid">
+            <div class="row-fluid">
+               <div class="span5">
+                  <h3>Contact Information</h3>
+                  <p><b>Office Hours: </b>Monday-Friday (8.00am - 5.00pm)</p>
+                  <p><b>Phone: </b>548-994-0989</p>
+                  <p><b>Cell: </b>548-994-0989</p>
+                  <a href="mailto:linlin.xu@ucalgary.ca">linlin.xu@ucalgary.ca</a>
+               </div>
+               <div class="span2">
+                  <a href="https://www.gsilab.ca/"><img src = "images/logo34.JPG" alt="research-lab-logo"/></a>
+               </div>
+               <div class="span5">
+                  <h3>Address</h3>
+                  <p>Geospatial Sensing and Intelligence Lab<br>
+                     2500 University Dr NW<br>
+                     Calgary, AB<br>
+                     Canada, T2N 1N4
+                  </p>
+                  <a href="https://www.google.com/maps/place/Schulich+School+of+Engineering/@51.0807002,-114.1338934,17z/data=!3m1!4b1!4m6!3m5!1s0x53716f0eeb616997:0xce5ac04d99b6bf7b!8m2!3d51.0806969!4d-114.1313131!16zL20vMGR4NzJk?entry=ttu">Show Map</a>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+      <!-- Le javascript
+         ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="js/jquery-1.9.1.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script>
+         $(document).ready(function() {
+             $(document.body).scrollspy({
+                 target: "#navparent"
+             });
+         });
+         
+      </script>
+   </body>
+</html>
