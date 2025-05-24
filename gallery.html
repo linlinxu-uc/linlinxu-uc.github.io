@@ -257,20 +257,21 @@
                target: "#navparent"
             });
             
-            // Handle YouTube video clicks
-            $('.youtube-link').on('click', function(e) {
-               e.preventDefault();
-               var videoId = $(this).data('youtube');
-               var embedUrl = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
-               
-               // Create iframe for lightbox
-               var iframe = $('<iframe/>', {
-                  'frameborder': '0',
-                  'allowfullscreen': '',
-                  'src': embedUrl,
-                  'width': '853',
-                  'height': '480'
-               });
+
+
+               $('.youtube-link').on('click', function (e) {
+    e.preventDefault();
+    blueimp.Gallery([{
+        title: $(this).attr('title'),
+        href: 'https://www.youtube.com/watch?v=' + $(this).data('youtube'),
+        type: 'text/html',
+        youtube: $(this).data('youtube')
+    }], {
+        container: '#blueimp-gallery',
+        youTubeClickToPlay: false
+    });
+});
+
                
                // Open in blueimp gallery
                blueimp.Gallery([{
