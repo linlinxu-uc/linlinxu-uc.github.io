@@ -232,21 +232,9 @@
           });
          });
          
-         document.getElementById('gallery').onclick = function(e) {
-           e = e || window.event;
-           var target = e.target || e.srcElement,
-               link = this.getElementsByTagName('a'),
-               options = {
-                 onopen: function() {
-                   var video = this.list[this.index].querySelector('video');
-                   if (video) video.play().catch(e => console.log(e));
-                 }
-               };
-           blueimp.Gallery([link], options);
-           return false;
-         };
+
          
-         <!--
+
          document.getElementById('imagegallery1').onclick = function (event) {
           event = event || window.event;
           var target = event.target || event.srcElement,
@@ -255,6 +243,8 @@
               links = this.getElementsByTagName('a');
           blueimp.Gallery(links, options);
          };
+
+         <!--
           document.getElementById('imagegallery1').onclick = function (event) {
           event = event || window.event;
           var target = event.target || event.srcElement,
