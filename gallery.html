@@ -247,7 +247,7 @@
               links = this.getElementsByTagName('a');
           blueimp.Gallery(links, options);
          };
-         -->
+
 
 
     document.getElementById('imagegallery1').onclick = function (event) {
@@ -282,6 +282,28 @@
 );
     blueimp.Gallery(links, options);
 };
+
+         -->
+             // Initialize gallery with video support
+          blueimp.Gallery(
+              document.getElementById('imagegallery1').getElementsByTagName('a'),
+              {
+                  container: '#blueimp-gallery',
+                  carousel: true,
+                  videoPoster: 'images/poster.jpg',
+                  onslide: function(index, slide) {
+                      // Handle video playback when slide changes
+                      var video = slide.getElementsByTagName('video')[0];
+                      if (video) {
+                          video.muted = true; // Required for Chrome autoplay
+                          video.play().catch(e => {
+                              // Show play button if autoplay fails
+                              showPlayButton(video);
+                          });
+                      }
+                  }
+              }
+          );
          
          document.getElementById('imagegallery2').onclick = function (event) {
           event = event || window.event;
