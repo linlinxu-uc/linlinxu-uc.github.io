@@ -247,7 +247,7 @@
               links = this.getElementsByTagName('a');
           blueimp.Gallery(links, options);
          };
-
+       -->
 
 
           document.getElementById('imagegallery1').onclick = function (event) {
@@ -272,7 +272,8 @@
                   }
               },
            links = this.getElementsByTagName('a');
-            if (this.list[this.index].nodeName === 'VIDEO') {
+            var video = this.list[this.index].querySelector('video');
+            if (video) {
                   blueimp.Gallery(
                    document.getElementById('imagegallery1').getElementsByTagName('a'),
                    {
@@ -287,69 +288,8 @@
             }
       };
 
-       -->
-          
-         document.getElementById('imagegallery1').onclick = function (event) {
-             event = event || window.event;
-             var target = event.target || event.srcElement,
-                 link = target.src ? target.parentNode : target,
-                 options = {
-                     index: link, 
-                     event: event,
-                     container: '#blueimp-gallery',
-                     carousel: true,
-                     videoPoster: 'images/poster.jpg',
-                     toggleControlsOnEnter: true,
-                     toggleControlsOnSlideClick: true,
-                     closeOnSlideClick: true,
-                     closeOnSwipeUpOrDown: true,
-                     enableKeyboardNavigation: true,
-                     onopen: function() {
-                         // Special handling when opening a video
-                         var video = this.list[this.index].querySelector('video');
-                         if (video) {
-                             this.container.find('.title').hide();
-                             // Mute video for Chrome autoplay
-                             video.muted = true;
-                             // Attempt to play with error handling
-                             video.play().catch(e => {
-                                 console.log("Autoplay prevented:", e);
-                                 showPlayButton(video);
-                             });
-                         }
-                     },
-                     onslide: function(index, slide) {
-                         // Handle video playback when slide changes
-                         var video = slide.querySelector('video');
-                         if (video) {
-                             video.muted = true;
-                             video.play().catch(e => {
-                                 console.log("Slide autoplay prevented:", e);
-                                 showPlayButton(video);
-                             });
-                         }
-                     }
-                 },
-                 links = this.getElementsByTagName('a');
-             
-             // Initialize gallery with unified options
-             blueimp.Gallery(links, options);
-             
-             // Helper function to show play button when autoplay fails
-             function showPlayButton(video) {
-                 var playBtn = document.createElement('div');
-                 playBtn.className = 'video-play-overlay';
-                 playBtn.innerHTML = '▶';
-                 playBtn.onclick = function() {
-                     video.play()
-                         .then(() => this.remove())
-                         .catch(e => console.log("Manual play failed:", e));
-                 };
-                 video.parentNode.appendChild(playBtn);
-             }
-             
-             return false;
-         };
+
+
 
 
          
