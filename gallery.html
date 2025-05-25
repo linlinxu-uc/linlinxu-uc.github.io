@@ -247,7 +247,7 @@
               links = this.getElementsByTagName('a');
           blueimp.Gallery(links, options);
          };
-       -->
+
 
 
           document.getElementById('imagegallery1').onclick = function (event) {
@@ -272,8 +272,9 @@
                   }
               },
 
-            //var video = this.list[this.index].querySelector('video');
-             video = link.querySelector('video'), // Checks if <a> contains <video>
+               //var video = this.list[this.index].querySelector('video');
+               video = link.querySelector('video'); // Checks if <a> contains <video>
+             
             if (video) {
                   blueimp.Gallery(
                    document.getElementById('imagegallery1').getElementsByTagName('a'),
@@ -290,9 +291,45 @@
             }
       };
 
+       -->
 
-
-
+         document.getElementById('imagegallery1').onclick = function (event) {
+             event = event || window.event;
+             var target = event.target || event.srcElement,
+                 link = target.src ? target.parentNode : target,
+                 options = {
+                     index: link, 
+                     event: event,
+                     // Video-specific options:
+                     videoPoster: 'images/poster.jpg', // Optional poster image
+                     toggleControlsOnEnter: true,
+                     toggleControlsOnSlideClick: true,
+                     closeOnSlideClick: true,
+                     closeOnSwipeUpOrDown: true,
+                     enableKeyboardNavigation: true,
+                     onopen: function() {
+                         // Special handling when opening a video
+                         if (this.list[this.index].nodeName === 'VIDEO') {
+                             this.container.find('.title').hide();
+                         }
+                     }
+                 },
+                 links = this.getElementsByTagName('a'),
+                 video = link.querySelector('video'); // Checks if <a> contains <video>
+         
+             if (video) {
+                 blueimp.Gallery(
+                     document.getElementById('imagegallery1').getElementsByTagName('a'),
+                     {
+                         container: '#blueimp-gallery',
+                         carousel: true,
+                         videoPoster: 'images/poster.jpg'
+                     }
+                 );
+             } else {
+                 blueimp.Gallery(links, options);
+             }
+         };
 
          
          document.getElementById('imagegallery2').onclick = function (event) {
