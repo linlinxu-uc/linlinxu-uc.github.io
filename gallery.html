@@ -69,7 +69,7 @@
                               class="thumbnail" 
                               data-gallery
                               data-type="video/mp4">
-                              <video width="100%" preload="metadata" playsinline>
+                              <video width="100%" preload="auto" playsinline>
                                  <source src="https://www.gsilab.ca/images/arctic_300_compat.mp4" type="video/mp4">
                                  Your browser does not support HTML5 video.
                               </video>
@@ -213,11 +213,13 @@
          </div>
       </footer>
 
-      <!-- JavaScript at the end for faster loading -->
+
+
+
       <script src="js/jquery-1.9.1.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script src="js/blueimp-gallery.min.js"></script>
-      <script src="js/blueimp-gallery-video.js"></script>
+      <script src="js/blueimp-gallery-video.js"></script> <!-- Make sure this is included -->
       
       <script>
       $(document).ready(function() {
@@ -225,31 +227,34 @@
             target: "#navparent"
          });
          
-         // Initialize gallery with video support
+         // Initialize gallery with proper video handling
          document.getElementById('imagegallery1').onclick = function (event) {
             event = event || window.event;
             var target = event.target || event.srcElement,
                 link = target.src ? target.parentNode : target,
                 options = {
-                    index: link,
+                    index: link, 
                     event: event,
                     toggleControlsOnEnter: true,
                     closeOnSlideClick: true,
-                    stretchImages: false,
                     onslide: function(index, slide) {
-                        // Handle video elements
+                        // Auto-play videos when they become active
                         var video = slide.getElementsByTagName('video')[0];
                         if (video) {
-                            if (this.activeIndex === index) {
-                                video.play();
-                            } else {
-                                video.pause();
-                            }
+                            video.play().catch(e => console.log("Autoplay prevented:", e));
+                        }
+                    },
+                    onopen: function() {
+                        // Try to play video immediately when gallery opens
+                        var video = this.list[this.index].getElementsByTagName('video')[0];
+                        if (video) {
+                            video.play().catch(e => console.log("Autoplay prevented:", e));
                         }
                     }
                 },
                 links = this.getElementsByTagName('a');
             blueimp.Gallery(links, options);
+            return false;
          };
          
          document.getElementById('imagegallery2').onclick = function (event) {
@@ -259,6 +264,7 @@
                 options = {index: link, event: event},
                 links = this.getElementsByTagName('a');
             blueimp.Gallery(links, options);
+            return false;
          };
       });
       </script>
