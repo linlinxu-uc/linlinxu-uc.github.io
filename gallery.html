@@ -238,6 +238,7 @@
          };
          -->
 
+
     document.getElementById('imagegallery1').onclick = function (event) {
     event = event || window.event;
     var target = event.target || event.srcElement,
@@ -260,8 +261,7 @@
             }
         },
         links = this.getElementsByTagName('a');
-    //blueimp.Gallery(links, options);
-       blueimp.Gallery(
+   blueimp.Gallery(
     document.getElementById('imagegallery1').getElementsByTagName('a'),
     {
         container: '#blueimp-gallery',
@@ -269,6 +269,7 @@
         videoPoster: 'images/poster.jpg'
     }
 );
+    blueimp.Gallery(links, options);
 };
          
          document.getElementById('imagegallery2').onclick = function (event) {
