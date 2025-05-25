@@ -271,8 +271,9 @@
                       }
                   }
               },
-           links = this.getElementsByTagName('a');
-            var video = this.list[this.index].querySelector('video');
+
+            //var video = this.list[this.index].querySelector('video');
+             video = link.querySelector('video'), // Checks if <a> contains <video>
             if (video) {
                   blueimp.Gallery(
                    document.getElementById('imagegallery1').getElementsByTagName('a'),
@@ -284,6 +285,7 @@
                );
             }
             else {
+               links = this.getElementsByTagName('a');
                 blueimp.Gallery(links, options);
             }
       };
