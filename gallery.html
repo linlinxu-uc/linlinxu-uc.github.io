@@ -235,7 +235,7 @@
          document.getElementById('gallery').onclick = function(e) {
            e = e || window.event;
            var target = e.target || e.srcElement,
-               link = target.closest('a[data-gallery]'),
+               link = this.getElementsByTagName('a'),
                options = {
                  onopen: function() {
                    var video = this.list[this.index].querySelector('video');
