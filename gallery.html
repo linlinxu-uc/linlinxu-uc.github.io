@@ -271,54 +271,72 @@
                 target: "#navparent"
             });
             
-            // Initialize PhotoSwipe Lightbox
-            const lightbox = new PhotoSwipeLightbox({
-                gallery: '#imagegallery1, #imagegallery2',
-                children: 'a.thumbnail',
-                pswpModule: PhotoSwipe,
-                // Custom video handling
-                appendToEl: document.body,
-                dataSource: {
-                    iframe: {
-                        parseSrc: (item) => {
-                            if (item.element.dataset.pswpType === 'video') {
-                                return `
-                                    <div class="pswp__video-wrapper">
-                                        <video controls autoplay muted playsinline style="max-width:100%;max-height:100%">
-                                            <source src="${item.element.href}" type="video/mp4">
-                                        </video>
-                                    </div>
-                                `;
-                            }
-                            return null;
-                        }
-                    }
+            // Prepare gallery items
+            const galleryItems = [];
+            document.querySelectorAll('#imagegallery1 .thumbnail, #imagegallery2 .thumbnail').forEach((el, index) => {
+                const item = {
+                    element: el,
+                    index: index
+                };
+                
+                if (el.getAttribute('data-pswp-type') === 'video') {
+                    // Video item
+                    item.data = {
+                        html: `
+                            <div class="pswp__video-wrapper">
+                                <video controls autoplay muted playsinline style="max-width:100%;max-height:100%">
+                                    <source src="${el.href}" type="video/mp4">
+                                </video>
+                            </div>
+                        `,
+                        width: 1280,
+                        height: 720
+                    };
+                } else {
+                    // Image item
+                    item.data = {
+                        src: el.href,
+                        w: parseInt(el.getAttribute('data-pswp-width')) || 1200,
+                        h: parseInt(el.getAttribute('data-pswp-height')) || 800,
+                        title: el.getAttribute('data-caption') || ''
+                    };
                 }
-            });
-            
-            lightbox.on('uiRegister', () => {
-                // Custom UI for videos
-                lightbox.pswp.ui.registerElement({
-                    name: 'video-play-button',
-                    order: 9,
-                    isButton: true,
-                    html: 'Play',
-                    onClick: (event, el) => {
-                        const video = lightbox.pswp.currSlide.content.querySelector('video');
-                        if (video) {
-                            if (video.paused) {
-                                video.play();
-                                el.innerHTML = 'Pause';
-                            } else {
-                                video.pause();
-                                el.innerHTML = 'Play';
-                            }
-                        }
-                    }
+                
+                galleryItems.push(item);
+                
+                // Add click handler
+                el.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openPhotoSwipe(galleryItems, index);
                 });
             });
             
-            lightbox.init();
+            // Open PhotoSwipe with proper navigation
+            function openPhotoSwipe(items, index) {
+                const pswpOptions = {
+                    index: index,
+                    bgOpacity: 0.9,
+                    showHideOpacity: true,
+                    closeOnVerticalDrag: false,
+                    getThumbBoundsFn: function(index) {
+                        const thumbnail = items[index].element;
+                        const pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
+                        const rect = thumbnail.getBoundingClientRect();
+                        return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+                    }
+                };
+                
+                // Prepare data source
+                const dataSource = items.map(item => item.data);
+                
+                // Initialize PhotoSwipe
+                const gallery = new PhotoSwipe({
+                    dataSource: dataSource,
+                    ...pswpOptions
+                });
+                
+                gallery.init();
+            }
         });
     </script>
 </body>
