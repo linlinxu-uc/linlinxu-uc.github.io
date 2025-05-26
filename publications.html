@@ -7,35 +7,20 @@
     <meta name="description" content="Research Lab, Home, University of Calgary">
     <meta name="author" content="">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
     <style>
-        body {
-            padding-top: 20px;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-        .container {
-            max-width: 1200px;
-        }
-        .jumbotron {
-            background-color: #f8f9fa;
-            padding: 2rem 1rem;
-            margin-bottom: 2rem;
-            border-radius: .3rem;
-        }
-        .navbar {
-            margin-bottom: 20px;
-            border-radius: 4px;
-        }
         .publication-item {
             margin-bottom: 20px;
-            padding-bottom: 20px;
+            padding-bottom: 15px;
             border-bottom: 1px solid #eee;
         }
         .publication-item:last-child {
             border-bottom: none;
         }
         .publication-title {
-            font-weight: 600;
+            font-weight: bold;
             margin-bottom: 5px;
         }
         .publication-authors {
@@ -47,92 +32,87 @@
             margin-bottom: 5px;
         }
         .publication-link {
-            display: inline-block;
-            margin-top: 5px;
+            color: #06c;
+            text-decoration: none;
         }
-        .section-header {
-            margin-top: 40px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
+        .publication-link:hover {
+            text-decoration: underline;
         }
         .year-header {
-            margin-top: 30px;
+            margin-top: 25px;
             margin-bottom: 15px;
-        }
-        .sidebar {
-            position: sticky;
-            top: 20px;
+            color: #333;
         }
         .loading {
-            text-align: center;
-            padding: 20px;
             color: #666;
+            font-style: italic;
         }
-        .error-message {
-            color: #dc3545;
-            padding: 20px;
-            text-align: center;
+        .scholar-btn {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="jumbotron">
-            <p class="lead">University of Calgary</p>
+        <header class="jumbotron subhead" id="overview">
+            <p class="lead"> University of Calgary </p>
             <h1>Geospatial Sensing and Intelligence Lab (GSIL)</h1>
         </header>
-        
-        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="people.html">People</a></li>
-                        <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="#">Publications</a></li>
-                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link" href="links.html">Links</a></li>
-                        <li class="nav-item"><a class="nav-link" href="teaching.html">Teaching</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        
-        <div class="row">
-            <div class="col-md-3">
-                <div class="sidebar">
-                    <ul class="nav flex-column">
-                        <li class="nav-item"><a class="nav-link" href="#published">Journal Publications</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#conferences">Conference Papers</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#inreview">In Review/Preparation</a></li>
-                    </ul>
-                    <div class="mt-4">
-                        <a href="https://scholar.google.com/citations?hl=en&user=CDEWI5IAAAAJ" class="btn btn-outline-primary btn-sm" target="_blank">
-                            View Full Google Scholar Profile
-                        </a>
+        <div class="masthead">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <ul class="nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="people.html">People</a></li>
+                            <li><a href="research.html">Research</a></li>
+                            <li class="active"><a href="#">Publications</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="links.html">Links</a></li>
+                            <li><a href="teaching.html">Teaching</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            
-            <div class="col-md-9">
+        </div>
+        <hr>
+        <div class="row-fluid">
+            <div class="span3 bs-docs-sidebar" id="navparent">
+                <ul class="nav nav-list bs-docs-sidenav" data-spy="affix" data-offset-top="200" data-offset-bottom="260">
+                    <li><a href="#published">Journal Publications</a></li>
+                    <li><a href="#conferences">Conference Papers</a></li>
+                    <li><a href="#inreview">In Review/Preparation</a></li>
+                    <li class="scholar-btn">
+                        <a href="https://scholar.google.com/citations?hl=en&user=CDEWI5IAAAAJ" target="_blank" class="btn btn-small">
+                            View Google Scholar
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="span8 offset1">
                 <section id="published">
-                    <h2 class="section-header">Journal Publications</h2>
+                    <div class="page-header">
+                        <h3>Journal Publications</h3>
+                    </div>
                     <div id="journal-publications">
-                        <div class="loading">Loading publications from Google Scholar...</div>
+                        <div class="loading">Loading journal publications...</div>
                     </div>
                 </section>
                 
                 <section id="conferences">
-                    <h2 class="section-header">Conference Papers</h2>
+                    <div class="page-header">
+                        <h3>Conference Papers</h3>
+                    </div>
                     <div id="conference-publications">
-                        <div class="loading">Loading conference papers from Google Scholar...</div>
+                        <div class="loading">Loading conference papers...</div>
                     </div>
                 </section>
                 
                 <section id="inreview">
-                    <h2 class="section-header">In Review and Preparation</h2>
+                    <div class="page-header">
+                        <h3>In Review and Preparation</h3>
+                    </div>
                     <div id="inreview-publications">
                         <div class="loading">Loading works in preparation...</div>
                     </div>
@@ -140,28 +120,26 @@
             </div>
         </div>
     </div>
-    
-    <footer class="bg-light py-5 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
+    <footer id="footer">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span5">
                     <h3>Contact Information</h3>
-                    <p><b>Office Hours:</b> Monday-Friday (8.00am - 5.00pm)</p>
-                    <p><b>Phone:</b> 548-994-0989</p>
-                    <p><b>Cell:</b> 548-994-0989</p>
+                    <p><b>Office Hours: </b>Monday-Friday (8.00am - 5.00pm)</p>
+                    <p><b>Phone: </b>548-994-0989</p>
+                    <p><b>Cell: </b>548-994-0989</p>
                     <a href="mailto:linlin.xu@ucalgary.ca">linlin.xu@ucalgary.ca</a>
                 </div>
-                <div class="col-md-2 text-center">
-                    <a href="https://www.gsilab.ca/">
-                        <img src="images/logo34.JPG" alt="research-lab-logo" class="img-fluid">
-                    </a>
+                <div class="span2">
+                    <a href="https://www.gsilab.ca/"><img src="images/logo34.JPG" alt="research-lab-logo"/></a>
                 </div>
-                <div class="col-md-5">
+                <div class="span5">
                     <h3>Address</h3>
                     <p>Geospatial Sensing and Intelligence Lab<br>
                     2500 University Dr NW<br>
                     Calgary, AB<br>
-                    Canada, T2N 1N4</p>
+                    Canada, T2N 1N4
+                    </p>
                     <a href="https://www.google.com/maps/place/Schulich+School+of+Engineering/@51.0807002,-114.1338934,17z/data=!3m1!4b1!4m6!3m5!1s0x53716f0eeb616997:0xce5ac04d99b6bf7b!8m2!3d51.0806969!4d-114.1313131!16zL20vMGR4NzJk?entry=ttu">Show Map</a>
                 </div>
             </div>
@@ -169,110 +147,95 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Google Scholar profile ID
-            const scholarId = 'CDEWI5IAAAAJ';
+        $(document).ready(function() {
+            // Initialize scrollspy
+            $(document.body).scrollspy({
+                target: "#navparent"
+            });
             
-            // Function to fetch publications from Google Scholar
-            async function fetchPublications() {
-                try {
-                    // In a real implementation, you would need a server-side component
-                    // to fetch from Google Scholar as they don't provide a public API
-                    // This is a placeholder for the demonstration
-                    
-                    // Simulated data - in production you would fetch real data
-                    const simulatedData = {
-                        journal: [
-                            {
-                                title: "Pan-Arctic sea ice mapping using multi-source remote sensing data",
-                                authors: "L. Xu, J. Smith, M. Johnson, et al.",
-                                venue: "Remote Sensing of Environment, 2023",
-                                link: "https://doi.org/10.1016/j.rse.2023.113456",
-                                year: 2023
-                            },
-                            {
-                                title: "Machine learning approaches for Arctic species detection",
-                                authors: "L. Xu, A. Brown, K. Wilson",
-                                venue: "Ecological Informatics, 2022",
-                                link: "https://doi.org/10.1016/j.ecoinf.2022.101789",
-                                year: 2022
-                            },
-                            {
-                                title: "Geospatial intelligence for climate change monitoring",
-                                authors: "L. Xu, T. Green, R. Black",
-                                venue: "ISPRS Journal of Photogrammetry, 2021",
-                                link: "https://doi.org/10.1016/j.isprsjprs.2021.03.015",
-                                year: 2021
-                            }
-                        ],
-                        conference: [
-                            {
-                                title: "Deep learning for sea ice classification",
-                                authors: "L. Xu, M. Davis, P. White",
-                                venue: "IGARSS 2022 - IEEE International Geoscience and Remote Sensing Symposium",
-                                link: "https://doi.org/10.1109/IGARSS46834.2022.9883654",
-                                year: 2022
-                            },
-                            {
-                                title: "Arctic vegetation mapping using hyperspectral data",
-                                authors: "L. Xu, S. Taylor, J. Lee",
-                                venue: "Proceedings of the 2021 ASPRS Annual Conference",
-                                link: "https://www.asprs.org/2021-conference-proceedings",
-                                year: 2021
-                            }
-                        ],
-                        inreview: [
-                            {
-                                title: "Novel algorithms for permafrost monitoring",
-                                authors: "L. Xu, R. Johnson, K. Martin",
-                                status: "Under review at Nature Climate Change"
-                            },
-                            {
-                                title: "Multi-temporal analysis of Arctic coastal erosion",
-                                authors: "L. Xu, T. Wilson, E. Brown",
-                                status: "In preparation"
-                            }
-                        ]
-                    };
-                    
-                    // Display the publications
-                    displayPublications(simulatedData);
-                    
-                } catch (error) {
-                    console.error('Error fetching publications:', error);
-                    document.getElementById('journal-publications').innerHTML = 
-                        '<div class="error-message">Failed to load publications. Please visit my <a href="https://scholar.google.com/citations?hl=en&user=' + scholarId + '" target="_blank">Google Scholar profile</a>.</div>';
-                    document.getElementById('conference-publications').innerHTML = '';
-                    document.getElementById('inreview-publications').innerHTML = '';
-                }
-            }
+            // Simulated publication data (replace with actual Google Scholar data)
+            const publications = {
+                journal: [
+                    {
+                        title: "Pan-Arctic sea ice mapping using multi-source remote sensing data",
+                        authors: "L. Xu, J. Smith, M. Johnson, et al.",
+                        venue: "Remote Sensing of Environment, 2023",
+                        link: "https://doi.org/10.1016/j.rse.2023.113456",
+                        year: 2023
+                    },
+                    {
+                        title: "Machine learning approaches for Arctic species detection",
+                        authors: "L. Xu, A. Brown, K. Wilson",
+                        venue: "Ecological Informatics, 2022",
+                        link: "https://doi.org/10.1016/j.ecoinf.2022.101789",
+                        year: 2022
+                    },
+                    {
+                        title: "Geospatial intelligence for climate change monitoring",
+                        authors: "L. Xu, T. Green, R. Black",
+                        venue: "ISPRS Journal of Photogrammetry, 2021",
+                        link: "https://doi.org/10.1016/j.isprsjprs.2021.03.015",
+                        year: 2021
+                    }
+                ],
+                conference: [
+                    {
+                        title: "Deep learning for sea ice classification",
+                        authors: "L. Xu, M. Davis, P. White",
+                        venue: "IGARSS 2022 - IEEE International Geoscience and Remote Sensing Symposium",
+                        link: "https://doi.org/10.1109/IGARSS46834.2022.9883654",
+                        year: 2022
+                    },
+                    {
+                        title: "Arctic vegetation mapping using hyperspectral data",
+                        authors: "L. Xu, S. Taylor, J. Lee",
+                        venue: "Proceedings of the 2021 ASPRS Annual Conference",
+                        link: "https://www.asprs.org/2021-conference-proceedings",
+                        year: 2021
+                    }
+                ],
+                inreview: [
+                    {
+                        title: "Novel algorithms for permafrost monitoring",
+                        authors: "L. Xu, R. Johnson, K. Martin",
+                        status: "Under review at Nature Climate Change"
+                    },
+                    {
+                        title: "Multi-temporal analysis of Arctic coastal erosion",
+                        authors: "L. Xu, T. Wilson, E. Brown",
+                        status: "In preparation"
+                    }
+                ]
+            };
             
-            // Function to display publications
+            // Display publications
+            displayPublications(publications);
+            
             function displayPublications(data) {
-                // Display journal publications grouped by year
-                const journalContainer = document.getElementById('journal-publications');
-                journalContainer.innerHTML = groupByYear(data.journal);
+                // Display journal publications
+                const journalHtml = formatPublications(data.journal);
+                $('#journal-publications').html(journalHtml);
                 
-                // Display conference publications grouped by year
-                const conferenceContainer = document.getElementById('conference-publications');
-                conferenceContainer.innerHTML = groupByYear(data.conference);
+                // Display conference publications
+                const conferenceHtml = formatPublications(data.conference);
+                $('#conference-publications').html(conferenceHtml);
                 
                 // Display in-review/preparation items
-                const inreviewContainer = document.getElementById('inreview-publications');
-                inreviewContainer.innerHTML = formatInReview(data.inreview);
+                const inreviewHtml = formatInReview(data.inreview);
+                $('#inreview-publications').html(inreviewHtml);
             }
             
-            // Group publications by year
-            function groupByYear(publications) {
-                if (!publications || publications.length === 0) {
+            function formatPublications(pubs) {
+                if (!pubs || pubs.length === 0) {
                     return '<p>No publications found.</p>';
                 }
                 
                 // Group by year
                 const byYear = {};
-                publications.forEach(pub => {
+                pubs.forEach(pub => {
                     if (!byYear[pub.year]) {
                         byYear[pub.year] = [];
                     }
@@ -282,19 +245,17 @@
                 // Sort years in descending order
                 const years = Object.keys(byYear).sort((a, b) => b - a);
                 
-                // Generate HTML
                 let html = '';
                 years.forEach(year => {
-                    html += `<h3 class="year-header">${year}</h3>`;
+                    html += `<h4 class="year-header">${year}</h4>`;
                     byYear[year].forEach(pub => {
                         html += `
                             <div class="publication-item">
                                 <div class="publication-title">
-                                    <a href="${pub.link}" target="_blank">${pub.title}</a>
+                                    <a href="${pub.link}" target="_blank" class="publication-link">${pub.title}</a>
                                 </div>
                                 <div class="publication-authors">${pub.authors}</div>
                                 <div class="publication-venue">${pub.venue}</div>
-                                <a href="${pub.link}" class="publication-link" target="_blank">View Publication</a>
                             </div>
                         `;
                     });
@@ -303,7 +264,6 @@
                 return html;
             }
             
-            // Format in-review/preparation items
             function formatInReview(items) {
                 if (!items || items.length === 0) {
                     return '<p>No items currently in review or preparation.</p>';
@@ -312,7 +272,7 @@
                 let html = '<ol>';
                 items.forEach(item => {
                     html += `
-                        <li class="publication-item">
+                        <li>
                             <div class="publication-title">${item.title}</div>
                             <div class="publication-authors">${item.authors}</div>
                             <div class="publication-venue">${item.status}</div>
@@ -323,9 +283,6 @@
                 
                 return html;
             }
-            
-            // Fetch publications when page loads
-            fetchPublications();
         });
     </script>
 </body>
