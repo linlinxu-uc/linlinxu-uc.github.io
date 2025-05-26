@@ -226,8 +226,8 @@
              target: "#navparent"
           });
          });
-
-         // This single onclick handler is sufficient for imagegallery1
+      
+         // This is the ONE and ONLY onclick handler needed for imagegallery1
          document.getElementById('imagegallery1').onclick = function (event) {
             event = event || window.event;
             var target = event.target || event.srcElement,
@@ -245,13 +245,12 @@
                     enableKeyboardNavigation: true
                 },
                 links = this.getElementsByTagName('a'); // Get all <a> tags within imagegallery1
-
+      
             // Blueimp Gallery automatically handles different media types (image/video)
             // if the data-type attribute is correctly set on the <a> tag.
-            // No need for explicit checks for <video> tags inside <a> for blueimp gallery.
             blueimp.Gallery(links, options);
          };
-
+      
          document.getElementById('imagegallery2').onclick = function (event) {
           event = event || window.event;
           var target = event.target || event.srcElement,
