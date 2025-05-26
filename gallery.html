@@ -1,340 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <title>Gallery</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Research Lab, Home, University of Calgary">
-      <meta name="author" content="">
-      <!-- Le styles -->
-      <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-      <link href="css/theme.css" rel="stylesheet">
-      <link href="css/blueimp-gallery.min.css" rel="stylesheet" >
-      <link href="css/blueimp-gallery-video.css" rel="stylesheet" >
-   </head>
-   <body>
-      <div class="container">
-         <header class="jumbotron subhead" id="overview">
-            <p class="lead"> University of Calgary </p>
+<head>
+    <meta charset="utf-8">
+    <title>Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research Lab, Home, University of Calgary">
+    <meta name="author" content="">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <style>
+        /* Custom styles */
+        body {
+            padding-top: 20px;
+        }
+        .gallery-thumbnail {
+            margin-bottom: 20px;
+        }
+        .gallery-thumbnail video {
+            width: 100%;
+            height: auto;
+            background: #000;
+        }
+        .caption {
+            margin-top: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="jumbotron subhead" id="overview">
+            <p class="lead">University of Calgary</p>
             <h1>Geospatial Sensing and Intelligence Lab (GSIL)</h1>
-         </header>
-         <div class="masthead">
+        </header>
+        
+        <div class="masthead">
             <div class="navbar">
-               <div class="navbar-inner">
-                  <div class="container">
-                     <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="people.html">People</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="publications.html">Publications</a></li>
-                        <li class="active"><a href="gallery.html">Gallery</a></li>
-                        <li><a href="links.html">Links</a></li>
-                        <li><a href="teaching.html">Teaching</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                     </ul>
-                  </div>
-               </div>
+                <div class="navbar-inner">
+                    <div class="container">
+                        <ul class="nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="people.html">People</a></li>
+                            <li><a href="research.html">Research</a></li>
+                            <li><a href="publications.html">Publications</a></li>
+                            <li class="active"><a href="gallery.html">Gallery</a></li>
+                            <li><a href="links.html">Links</a></li>
+                            <li><a href="teaching.html">Teaching</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-         </div>
-         <hr>
-         <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-            <div class="slides"></div>
-            <h3 class="title"> Gallery </h3>
-            <a class="prev">‹</a>
-            <a class="next">›</a>
-            <a class="close">×</a>
-            <a class="play-pause"></a>
-            <ol class="indicator"></ol>
-         </div>
-         <div class="row-fluid">
-            <div class="span3 bs-docs-sidebar" id="navparent">
-               <ul class="nav nav-list bs-docs-sidenav" data-spy="affix" data-offset-top="200" data-offset-bottom="260">
-                  <li><a href="#imagegallery1"> Pan-Arctic sea ice mapping </a></li>
-                  <li><a href="#imagegallery2"> Arctic species detection </a></li>
-               </ul>
+        </div>
+        <hr>
+        
+        <div class="row">
+            <div class="col-md-3">
+                <div class="sticky-top pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link active" href="#imagegallery1">Pan-Arctic sea ice</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#imagegallery2">Arctic species</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="span8 offset1">
-               <section id="imagegallery1">
-                  <div class="page-header">
-                     <h3>Pan-Arctic sea ice mapping</h3>
-                  </div>
-                  <div class="row-fluid">
-                     <ul class="thumbnails da-thumbs">
-                        <li class="span4">
-                           <a title="Pan-Arctic sea ice mosaic image generated by our system using 110 Sentinel-1 SAR scenes of about 22.4GB. 
-                              The spatial resolution of the image is 40 meters. 
-                              The size of the image is 110k-by-140k, with about 15 billion pixels. " 
-                              href="https://www.gsilab.ca/images/arctic_300.mp4" 
-                              class="thumbnail" 
-                              data-gallery>
-                              <video controls width="100%" preload="metadata" playsinline>
-                                <source src="https://www.gsilab.ca/images/arctic_300.mp4" type="video/mp4">
-                                Your browser does not support HTML5 video.
-                              </video>
 
-                           </a>
-                           <p class="caption"> Pan-Arctic sea ice video </p>
-                        </li>
+            <div class="col-md-9">
+                <section id="imagegallery1">
+                    <h2 class="mb-4">Pan-Arctic sea ice mapping</h2>
+                    <div class="row">
+                        <!-- Video Thumbnail 1 -->
+                        <div class="col-md-4 gallery-thumbnail">
+                            <a href="https://www.gsilab.ca/images/arctic_300.mp4" 
+                               data-fancybox="gallery1"
+                               data-caption="Pan-Arctic sea ice video">
+                                <video muted playsinline preload="metadata">
+                                    <source src="https://www.gsilab.ca/images/arctic_300.mp4" type="video/mp4">
+                                </video>
+                            </a>
+                            <p class="caption">Pan-Arctic sea ice video</p>
+                        </div>
                         
-                        <li class="span4">
-                           <a href="https://www.gsilab.ca/images/arctic_300_compat.mp4" data-gallery data-type="video/mp4">
-                             <video width="100%" muted playsinline preload="metadata">
-                               <source src="https://www.gsilab.ca/images/arctic_300_compat.mp4"  type="video/mp4">
-                             </video>
-                           </a>
-                           <p class="caption"> Purus faucibus ornare suspendisse sed nisi. </p>
-                        </li>
-
-   
-                        <li class="span4">
-                           <a title="Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Ante in nibh mauris cursus mattis molestie. Morbi tincidunt ornare massa eget egestas purus. " href="images/plants-in-beakers.jpg" class="thumbnail" >
-                           <img alt="" src="images/plants-in-beakers.jpg" style="width: 187px; height: 125px;">
-                           </a>
-                           <p class="caption"> Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium. </p>
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="row-fluid">
-                     <ul class="thumbnails">
-                        <li class="span4">
-                           <a href="images/bristol-robotics-lab.jpg" class="thumbnail" title="Tempus imperdiet nulla malesuada pellentesque elit eget. Sed enim ut sem viverra aliquet eget sit amet tellus.">
-                           <img alt="" src="images/bristol-robotics-lab.jpg" style="width: 187px; height: 125px;">
-                           </a>
-                           <p class="caption"> Tempus imperdiet nulla malesuada pellentesque. </p>
-                        </li>
-                        <li class="span4">
-                           <a href="images/bristol-robotics-lab2.jpg" class="thumbnail" title="Purus faucibus ornare suspendisse sed nisi. Velit laoreet id donec ultrices tincidunt arcu non sodales neque. Tortor at risus viverra adipiscing at in">
-                           <img alt="" src="images/bristol-robotics-lab2.jpg" style="width: 187px; height: 125px;">
-                           </a>
-                           <p class="caption"> Purus faucibus ornare suspendisse sed nisi. </p>
-                        </li>
-                        <li class="span4">
-                           <a href="images/lab-photo.jpg" class="thumbnail" title="Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Ante in nibh mauris cursus mattis molestie.">
-                           <img alt="" src="images/lab-photo.jpg" style="width: 187px; height: 125px;">
-                           </a>
-                           <p class="caption"> Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium. </p>
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="row-fluid">
-                     <ul class="thumbnails">
-                        <li class="span4">
-                           <a href="images/syringes.jpg" class="thumbnail" title="Tempus imperdiet nulla malesuada pellentesque elit eget. Sed enim ut sem viverra aliquet eget sit amet tellus.">
-                           <img alt="" src="images/syringes.jpg" style="width: 187px; height: 125px;">
-                           </a>
-                           <p class="caption"> Tempus imperdiet nulla malesuada </p>
-                        </li>
-                        <li class="span4">
-                           <a href="images/test-tubes.jpg" class="thumbnail" title="Purus faucibus ornare suspendisse sed nisi. Velit laoreet id donec ultrices tincidunt arcu non sodales neque.">
-                           <img alt="" src="images/test-tubes.jpg" style="width: 187px; height: 125px;">
-                           </a>
-                           <p class="caption"> Purus faucibus ornare suspendisse </p>
-                        </li>
-                        <li class="span4">
-                           <a href="images/microscope.jpg" class="thumbnail" title="Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Ante in nibh mauris cursus.">
-                           <img alt="" src="images/microscope.jpg" style="width: 187px; height: 125px;">
-                           </a>
-                           <p class="caption"> Tortor aliquam nulla facilisi cras </p>
-                        </li>
-                     </ul>
-                  </div>
-               </section>
-               <section id="imagegallery2">
-                  <div class="page-header">
-                     <h3>Image Gallery 2</h3>
-                  </div>
-                  <div class="row-fluid">
-                     <ul class="thumbnails da-thumbs">
-                        <li class="span4">
-                           <a title="Tortor vitae purus 2018"  href="images/you-x-ventures-studio.jpg" class="thumbnail" >
-                           <img alt="" src="images/you-x-ventures-studio.jpg" style="width: 187px; height: 125px;">            
-                           </a>
-                           <p class="caption"> Tortor vitae purus 2018 </p>
-                        </li>
-                        <li class="span4">
-                           <a title="Varius duis at consectetur lorem donec massa." href="images/arlington-research.jpg" class="thumbnail" >
-                           <img alt="" src="images/arlington-research.jpg" style="width: 187px; height: 125px;">
-                           </a>
-                           <p class="caption"> Varius duis at consectetur lorem donec massa </p>
-                        </li>
-                        <li class="span4">
-                           <a title="Tortor vitae purus 2018." href="images/lab-room.jpg" class="thumbnail" >
-                           <img alt="" src="images/lab-room.jpg" style="width: 187px; height: 125px;">
-                           </a>
-                           <p class="caption"> Tortor vitae purus 2018 </p>
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="row-fluid">
-                     <ul class="thumbnails">
-                        <li class="span4">
-                           <a title="Tortor vitae purus 2018"  href="images/individual-lab.jpg" class="thumbnail" >
-                           <img alt="" src="images/individual-lab.jpg" style="width: 187px; height: 125px;">            
-                           </a>
-                           <p class="caption"> Tortor vitae purus 2018 </p>
-                        </li>
-                        <li class="span4">
-                           <a title="Varius duis at consectetur lorem donec massa." href="images/arlington-research-2.jpg" class="thumbnail" >
-                           <img alt="" src="images/arlington-research-2.jpg" style="width: 187px; height: 125px;">
-                           </a>
-                           <p class="caption"> Varius duis at consectetur lorem donec massa </p>
-                        </li>
-                        <li class="span4">
-                           <a title="Tortor vitae purus 2018." href="images/arlington-research-3.jpg" class="thumbnail" >
-                           <img alt="" src="images/arlington-research-3.jpg" style="width: 187px; height: 125px;">
-                           </a>
-                           <p class="caption"> Tortor vitae purus 2018 </p>
-                        </li>
-                     </ul>
-                  </div>
-               </section>
+                        <!-- Video Thumbnail 2 -->
+                        <div class="col-md-4 gallery-thumbnail">
+                            <a href="https://www.gsilab.ca/images/arctic_300_compat.mp4" 
+                               data-fancybox="gallery1"
+                               data-caption="Compatible Arctic sea ice video">
+                                <video muted playsinline preload="metadata">
+                                    <source src="https://www.gsilab.ca/images/arctic_300_compat.mp4" type="video/mp4">
+                                </video>
+                            </a>
+                            <p class="caption">Compatible Arctic video</p>
+                        </div>
+                        
+                        <!-- Image Thumbnail -->
+                        <div class="col-md-4 gallery-thumbnail">
+                            <a href="https://via.placeholder.com/800x600" 
+                               data-fancybox="gallery1"
+                               data-caption="Sample image">
+                                <img src="https://via.placeholder.com/300x200" alt="" class="img-fluid">
+                            </a>
+                            <p class="caption">Sample image</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional rows of thumbnails -->
+                    <div class="row">
+                        <div class="col-md-4 gallery-thumbnail">
+                            <a href="https://via.placeholder.com/800x600/336699" data-fancybox="gallery1" data-caption="Sample image 2">
+                                <img src="https://via.placeholder.com/300x200/336699" alt="" class="img-fluid">
+                            </a>
+                            <p class="caption">Sample image 2</p>
+                        </div>
+                        <div class="col-md-4 gallery-thumbnail">
+                            <a href="https://via.placeholder.com/800x600/993366" data-fancybox="gallery1" data-caption="Sample image 3">
+                                <img src="https://via.placeholder.com/300x200/993366" alt="" class="img-fluid">
+                            </a>
+                            <p class="caption">Sample image 3</p>
+                        </div>
+                        <div class="col-md-4 gallery-thumbnail">
+                            <a href="https://via.placeholder.com/800x600/339966" data-fancybox="gallery1" data-caption="Sample image 4">
+                                <img src="https://via.placeholder.com/300x200/339966" alt="" class="img-fluid">
+                            </a>
+                            <p class="caption">Sample image 4</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="imagegallery2">
+                    <h2 class="mb-4">Arctic species detection</h2>
+                    <div class="row">
+                        <div class="col-md-4 gallery-thumbnail">
+                            <a href="https://via.placeholder.com/800x600/669933" data-fancybox="gallery2" data-caption="Species image 1">
+                                <img src="https://via.placeholder.com/300x200/669933" alt="" class="img-fluid">
+                            </a>
+                            <p class="caption">Species image 1</p>
+                        </div>
+                        <div class="col-md-4 gallery-thumbnail">
+                            <a href="https://via.placeholder.com/800x600/996633" data-fancybox="gallery2" data-caption="Species image 2">
+                                <img src="https://via.placeholder.com/300x200/996633" alt="" class="img-fluid">
+                            </a>
+                            <p class="caption">Species image 2</p>
+                        </div>
+                        <div class="col-md-4 gallery-thumbnail">
+                            <a href="https://via.placeholder.com/800x600/336699" data-fancybox="gallery2" data-caption="Species image 3">
+                                <img src="https://via.placeholder.com/300x200/336699" alt="" class="img-fluid">
+                            </a>
+                            <p class="caption">Species image 3</p>
+                        </div>
+                    </div>
+                </section>
             </div>
-         </div>
-      </div>
-      <footer id="footer">
-         <div class="container-fluid">
-            <div class="row-fluid">
-               <div class="span5">
-                  <h3>Contact Information</h3>
-                  <p><b>Office Hours: </b>Monday-Friday (8.00am - 5.00pm)</p>
-                  <p><b>Phone: </b>548-994-0989</p>
-                  <p><b>Cell: </b>548-994-0989</p>
-                  <a href="mailto:linlin.xu@ucalgary.ca">linlin.xu@ucalgary.ca</a>
-               </div>
-               <div class="span2">
-                  <a href="https://www.gsilab.ca/"><img src = "images/logo34.JPG" alt="research-lab-logo"/></a>
-               </div>
-               <div class="span5">
-                  <h3>Address</h3>
-                  <p>Geospatial Sensing and Intelligence Lab<br>
-                     2500 University Dr NW<br>
-                     Calgary, AB<br>
-                     Canada, T2N 1N4
-                  </p>
-                  <a href="https://www.google.com/maps/place/Schulich+School+of+Engineering/@51.0807002,-114.1338934,17z/data=!3m1!4b1!4m6!3m5!1s0x53716f0eeb616997:0xce5ac04d99b6bf7b!8m2!3d51.0806969!4d-114.1313131!16zL20vMGR4NzJk?entry=ttu">Show Map</a>
-               </div>
+        </div>
+    </div>
+
+    <footer id="footer" class="mt-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                    <h3>Contact Information</h3>
+                    <p><b>Office Hours:</b> Monday-Friday (8.00am - 5.00pm)</p>
+                    <p><b>Phone:</b> 548-994-0989</p>
+                    <p><b>Cell:</b> 548-994-0989</p>
+                    <a href="mailto:linlin.xu@ucalgary.ca">linlin.xu@ucalgary.ca</a>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a href="https://www.gsilab.ca/">
+                        <img src="https://via.placeholder.com/100x100" alt="research-lab-logo" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <h3>Address</h3>
+                    <p>Geospatial Sensing and Intelligence Lab<br>
+                    2500 University Dr NW<br>
+                    Calgary, AB<br>
+                    Canada, T2N 1N4</p>
+                    <a href="https://www.google.com/maps/place/Schulich+School+of+Engineering/@51.0807002,-114.1338934,17z/data=!3m1!4b1!4m6!3m5!1s0x53716f0eeb616997:0xce5ac04d99b6bf7b!8m2!3d51.0806969!4d-114.1313131!16zL20vMGR4NzJk?entry=ttu">Show Map</a>
+                </div>
             </div>
-         </div>
-      </footer>
+        </div>
+    </footer>
 
-      <!-- Le javascript
-         ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
-      <script src="js/jquery-1.9.1.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/blueimp-gallery.min.js"></script>
-      //<script src="js/blueimp-gallery-video.js"></script>
-      <script>
-         $(document).ready(function() {
-            $(document.body).scrollspy({
-             target: "#navparent"
-          });
-         });
-         
-
-         
-
-         document.getElementById('imagegallery1').onclick = function (event) {
-          event = event || window.event;
-          var target = event.target || event.srcElement,
-              link = target.src ? target.parentNode : target,
-              options = {index: link, event: event},
-              links = this.getElementsByTagName('a');
-          blueimp.Gallery(links, options);
-         };
-
-         <!--
-          document.getElementById('imagegallery1').onclick = function (event) {
-          event = event || window.event;
-          var target = event.target || event.srcElement,
-              link = target.src ? target.parentNode : target,
-              options = {
-                  index: link, 
-                  event: event,
-                  // Add these video-specific options:
-                  videoPoster: 'images/poster.jpg', // optional poster image
-                  toggleControlsOnEnter: true,
-                  toggleControlsOnSlideClick: true,
-                  closeOnSlideClick: true,
-                  closeOnSwipeUpOrDown: true,
-                  enableKeyboardNavigation: true,
-                  onopen: function() {
-                      // Special handling when opening a video
-                      if (this.list[this.index].nodeName === 'VIDEO') {
-                          this.container.find('.title').hide();
-                      }
-                  }
-              },
-
-               //var video = this.list[this.index].querySelector('video');
-               video = link.querySelector('video'); // Checks if <a> contains <video>
-             
-            if (video) {
-                  blueimp.Gallery(
-                   document.getElementById('imagegallery1').getElementsByTagName('a'),
-                   {
-                       container: '#blueimp-gallery',
-                       carousel: true,
-                       videoPoster: 'images/poster.jpg'
-                   }
-               );
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        // Initialize Fancybox
+        Fancybox.bind("[data-fancybox]", {
+            Thumbs: {
+                autoStart: false,
+            },
+            Toolbar: {
+                display: {
+                    left: [],
+                    middle: [],
+                    right: ["close"],
+                },
+            },
+            Video: {
+                autoplay: true,
+            },
+            on: {
+                reveal: (fancybox, slide) => {
+                    // Ensure videos are muted for Chrome autoplay
+                    const video = slide.$el.querySelector('video');
+                    if (video) {
+                        video.muted = true;
+                        video.play().catch(e => console.log("Autoplay error:", e));
+                    }
+                }
             }
-            else {
-               links = this.getElementsByTagName('a');
-                blueimp.Gallery(links, options);
-            }
-      };
-
-
-
-         document.getElementById('imagegallery1').onclick = function (event) {
-             event = event || window.event;
-             var target = event.target || event.srcElement,
-                 link = target.src ? target.parentNode : target,
-                 options = {
-                     index: link, 
-                     event: event,
-                     // Video-specific options:
-                     videoPoster: 'images/poster.jpg', // Optional poster image
-                     toggleControlsOnEnter: true,
-                     toggleControlsOnSlideClick: true,
-                     closeOnSlideClick: true,
-                     closeOnSwipeUpOrDown: true,
-                     enableKeyboardNavigation: true,
-                     onopen: function() {
-                         // Special handling when opening a video
-                         if (this.list[this.index].nodeName === 'VIDEO') {
-                             this.container.find('.title').hide();
-                         }
-                     }
-                 },
-                 links = this.getElementsByTagName('a'),
-                 video = link.querySelector('video'); // Checks if <a> contains <video>
-         
-             if (video) {
-                 blueimp.Gallery(
-                     document.getElementById('imagegallery1').getElementsByTagName('a'),
-                     {
-                         container: '#blueimp-gallery',
-                         carousel: true,
-                         videoPoster: 'images/poster.jpg'
-                     }
-                 );
-             } else {
-                 blueimp.Gallery(links, options);
-             }
-         };
-       -->
-         
-         document.getElementById('imagegallery2').onclick = function (event) {
-          event = event || window.event;
-          var target = event.target || event.srcElement,
-              link = target.src ? target.parentNode : target,
-              options = {index: link, event: event},
-              links = this.getElementsByTagName('a');
-          blueimp.Gallery(links, options);
-         };        
-      </script>  
-   </body>
+        });
+    </script>
+</body>
 </html>
