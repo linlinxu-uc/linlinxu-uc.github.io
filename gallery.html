@@ -1,31 +1,100 @@
-<a href="https://www.gsilab.ca/images/arctic_300.mp4" title="Pan-Arctic sea ice video" data-gallery>
-  <img src="images/arctic_300_thumbnail.jpg" alt="Video thumbnail" style="width: 187px; height: 125px;">
-</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
+  <link href="css/blueimp-gallery.min.css" rel="stylesheet">
+  <link href="css/blueimp-gallery-video.css" rel="stylesheet">
+  <style>
+    .caption {
+      margin-top: 8px;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
 
-<!-- Blueimp Gallery container (only once per page) -->
-<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-  <div class="slides"></div>
-  <h3 class="title"></h3>
-  <a class="prev">‹</a>
-  <a class="next">›</a>
-  <a class="close">×</a>
-  <a class="play-pause"></a>
-  <ol class="indicator"></ol>
-</div>
+<body>
 
-<!-- Scripts -->
-<script src="js/blueimp-gallery.min.js"></script>
-<script src="js/blueimp-gallery-video.js"></script> <!-- REQUIRED for .mp4 support -->
-<script>
-  document.getElementById('imagegallery1').onclick = function (event) {
-    event = event || window.event;
-    var target = event.target || event.srcElement;
-    var link = target.closest('a');
-    var options = {
-      index: link,
-      event: event
+  <div class="container">
+    <header class="jumbotron subhead" id="overview">
+      <h1>Geospatial Sensing and Intelligence Lab (GSIL)</h1>
+      <p class="lead">University of Calgary</p>
+    </header>
+
+    <section id="imagegallery1">
+      <h3>Research Gallery</h3>
+
+      <div class="row">
+        <ul class="thumbnails">
+
+          <!-- Video thumbnail -->
+          <li class="span4">
+            <a href="https://www.gsilab.ca/images/arctic_300.mp4" title="Pan-Arctic sea ice video" data-gallery>
+              <img src="images/arctic_300_thumbnail.jpg" alt="Video thumbnail" style="width: 187px; height: 125px;">
+            </a>
+            <p class="caption">Pan-Arctic sea ice video</p>
+          </li>
+
+          <!-- Image thumbnails -->
+          <li class="span4">
+            <a href="images/bristol-robotics-lab.jpg" class="thumbnail" title="Tempus imperdiet nulla malesuada pellentesque elit eget. Sed enim ut sem viverra aliquet eget sit amet tellus." data-gallery>
+              <img alt="bristol-robotics-lab" src="images/bristol-robotics-lab.jpg" style="width: 187px; height: 125px;">
+            </a>
+            <p class="caption">Tempus imperdiet nulla malesuada pellentesque.</p>
+          </li>
+
+          <li class="span4">
+            <a href="images/bristol-robotics-lab2.jpg" class="thumbnail" title="Purus faucibus ornare suspendisse sed nisi. Velit laoreet id donec ultrices tincidunt arcu non sodales neque. Tortor at risus viverra adipiscing at in" data-gallery>
+              <img alt="bristol-robotics-lab2" src="images/bristol-robotics-lab2.jpg" style="width: 187px; height: 125px;">
+            </a>
+            <p class="caption">Purus faucibus ornare suspendisse sed nisi.</p>
+          </li>
+
+          <li class="span4">
+            <a href="images/lab-photo.jpg" class="thumbnail" title="Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Ante in nibh mauris cursus mattis molestie." data-gallery>
+              <img alt="lab-photo" src="images/lab-photo.jpg" style="width: 187px; height: 125px;">
+            </a>
+            <p class="caption">Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium.</p>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- Blueimp Gallery Container -->
+  <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/blueimp-gallery.min.js"></script>
+  <script src="js/blueimp-gallery-video.js"></script>
+  <script>
+    document.getElementById('imagegallery1').onclick = function (event) {
+      event = event || window.event;
+      var target = event.target || event.srcElement;
+      var link = target.closest('a');
+      var options = {
+        index: link,
+        event: event
+      };
+      var links = this.getElementsByTagName('a');
+      blueimp.Gallery(links, options);
     };
-    var links = this.getElementsByTagName('a');
-    blueimp.Gallery(links, options);
-  };
-</script>
+  </script>
+</body>
+</html>
