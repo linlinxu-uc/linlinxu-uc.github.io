@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Gallery</title>
+  <title>Video Gallery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-  <link href="css/theme.css" rel="stylesheet">
-  <link href="css/blueimp-gallery.min.css" rel="stylesheet">
-  <link href="css/blueimp-gallery-video.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@2.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/blueimp-gallery/css/blueimp-gallery.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/blueimp-gallery/css/blueimp-gallery-video.css" rel="stylesheet">
+
   <style>
     .caption {
       margin-top: 8px;
@@ -21,53 +22,49 @@
 <body>
 
   <div class="container">
-    <header class="jumbotron subhead" id="overview">
-      <h1>Geospatial Sensing and Intelligence Lab (GSIL)</h1>
-      <p class="lead">University of Calgary</p>
-    </header>
+    <h1 class="page-header">Research Gallery</h1>
 
-    <section id="imagegallery1">
-      <h3>Research Gallery</h3>
-
+    <div id="imagegallery1">
       <div class="row">
         <ul class="thumbnails">
 
-          <!-- Video thumbnail -->
+          <!-- ✅ Video thumbnail (uses a public working .mp4) -->
           <li class="span4">
-            <a href="https://www.gsilab.ca/images/arctic_300.mp4" title="Pan-Arctic sea ice video" data-gallery>
-              <img src="images/arctic_300_thumbnail.jpg" alt="Video thumbnail" style="width: 187px; height: 125px;">
+            <a href="https://www.w3schools.com/html/mov_bbb.mp4"
+               title="Pan-Arctic sea ice video"
+               data-gallery>
+              <img src="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+                   alt="Video thumbnail"
+                   style="width: 187px; height: 125px;">
             </a>
             <p class="caption">Pan-Arctic sea ice video</p>
           </li>
 
-          <!-- Image thumbnails -->
+          <!-- ✅ Image thumbnails -->
           <li class="span4">
-            <a href="images/bristol-robotics-lab.jpg" class="thumbnail" title="Tempus imperdiet nulla malesuada pellentesque elit eget. Sed enim ut sem viverra aliquet eget sit amet tellus." data-gallery>
-              <img alt="bristol-robotics-lab" src="images/bristol-robotics-lab.jpg" style="width: 187px; height: 125px;">
+            <a href="https://via.placeholder.com/800x500.png?text=Lab+Photo+1"
+               title="Example image 1"
+               data-gallery>
+              <img src="https://via.placeholder.com/187x125.png?text=Photo+1" alt="Lab 1">
             </a>
-            <p class="caption">Tempus imperdiet nulla malesuada pellentesque.</p>
+            <p class="caption">Lab experiment photo</p>
           </li>
 
           <li class="span4">
-            <a href="images/bristol-robotics-lab2.jpg" class="thumbnail" title="Purus faucibus ornare suspendisse sed nisi. Velit laoreet id donec ultrices tincidunt arcu non sodales neque. Tortor at risus viverra adipiscing at in" data-gallery>
-              <img alt="bristol-robotics-lab2" src="images/bristol-robotics-lab2.jpg" style="width: 187px; height: 125px;">
+            <a href="https://via.placeholder.com/800x500.png?text=Lab+Photo+2"
+               title="Example image 2"
+               data-gallery>
+              <img src="https://via.placeholder.com/187x125.png?text=Photo+2" alt="Lab 2">
             </a>
-            <p class="caption">Purus faucibus ornare suspendisse sed nisi.</p>
-          </li>
-
-          <li class="span4">
-            <a href="images/lab-photo.jpg" class="thumbnail" title="Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Ante in nibh mauris cursus mattis molestie." data-gallery>
-              <img alt="lab-photo" src="images/lab-photo.jpg" style="width: 187px; height: 125px;">
-            </a>
-            <p class="caption">Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium.</p>
+            <p class="caption">Robotics research lab</p>
           </li>
 
         </ul>
       </div>
-    </section>
+    </div>
   </div>
 
-  <!-- Blueimp Gallery Container -->
+  <!-- ✅ Blueimp Gallery container -->
   <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
     <div class="slides"></div>
     <h3 class="title"></h3>
@@ -78,11 +75,11 @@
     <ol class="indicator"></ol>
   </div>
 
-  <!-- Scripts -->
-  <script src="js/jquery-1.9.1.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/blueimp-gallery.min.js"></script>
-  <script src="js/blueimp-gallery-video.js"></script>
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/blueimp-gallery/js/jquery.blueimp-gallery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/blueimp-gallery/js/blueimp-gallery-video.js"></script>
+
   <script>
     document.getElementById('imagegallery1').onclick = function (event) {
       event = event || window.event;
