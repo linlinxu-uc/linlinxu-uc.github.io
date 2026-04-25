@@ -2,7 +2,7 @@
 <html lang="en">
    <head>
       <meta charset="utf-8">
-      <title>People | Geospatial Sensing and Intelligence Lab (GSIL)</title>
+      <title>People</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="Research Lab, Home, University of Calgary"> 
       <meta name="author" content="">
@@ -10,47 +10,18 @@
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
       <link href="css/theme.css" rel="stylesheet">
-      
-      <!-- Custom inline style to fine-tune sidebar width & profile area expansion -->
+
       <style>
-         /* Make the sidebar narrow (e.g., 220px) and the content area expand */
-         .row-fluid {
-            display: flex;
-            flex-wrap: wrap;
+         /* Make sidebar flexible, not fixed width */
+         .bs-docs-sidenav {
+             width: auto;
+             max-width: 200px;   /* optional: limit how wide it can get */
          }
-         .bs-docs-sidebar {
-            width: 220px;          /* fixed narrow width – adjust as needed */
-            flex-shrink: 0;
-            position: relative;    /* keep affix working */
-         }
-         /* The main content column (originally .span9.offset1) gets the remaining space */
-         .row-fluid .span10.offset1 {
-            width: calc(100% - 240px);  /* subtract sidebar width + some gap */
-            margin-left: 20px;          /* small gap between sidebar and content */
-            flex: 1;
-         }
-         /* Ensure the affix sidebar still works on scroll */
-         .bs-docs-sidenav.affix {
-            position: fixed;
-            top: 20px;
-         }
-         /* Improve readability on very small screens: stack sidebar and content */
-         @media (max-width: 767px) {
-            .row-fluid {
-               display: block;
-            }
-            .bs-docs-sidebar,
-            .row-fluid .span10.offset1 {
-               width: auto;
-               margin-left: 0;
-            }
-         }
-         /* Optional: fine-tune the sidebar link appearance */
-         .bs-docs-sidebar .nav-list li a {
-            padding: 4px 8px;
-            font-size: 0.9rem;
+         .bs-docs-sidenav > li > a {
+             width: auto;
          }
       </style>
+      
    </head>
    <body>
       <div class="container">
@@ -79,8 +50,8 @@
          <hr>
          
          <div class="row-fluid"> 
-            <!-- SIDEBAR: made narrower from span2 to span1 (reduces width ~50%) => profiles get more horizontal space -->
-            <div class="span1 bs-docs-sidebar" id="navparent"> 
+            
+            <div class="span2 bs-docs-sidebar" id="navparent"> 
               <ul class="nav nav-list bs-docs-sidenav" data-spy="affix" data-offset-top="200" data-offset-bottom="260">
                 <li><a href="#pi">Principal Investigator</a></li>
                 <li><a href="#postdoc">Postdoc</a></li>
@@ -91,9 +62,7 @@
               </ul>
             </div>
             
-            <!-- MAIN CONTENT: from span9 offset1 → span10 offset1 gives additional width
-                 (profiles container expands from 9 to 10 columns, i.e., more room for bio text and images) -->
-            <div class="span10 offset1">
+            <div class="span9 offset1">
                <section id="pi">
                   <div class="page-header">
                      <h3>Principal Investigator</h3>
@@ -202,6 +171,8 @@
 
                      </div>
                   </div>
+
+
 
                   <hr>
 
@@ -495,6 +466,8 @@
                      </div>
                   </div>
 
+
+
                   <hr>
 
                   <div class="row-fluid">
@@ -520,6 +493,7 @@
                   </div>
                </section>
                   
+               </section>
                <hr>
                <section id="cosupervise">
                   <div class="page-header">
@@ -703,6 +677,7 @@
 
       <!-- Le javascript
          ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
       <script src="js/jquery-1.9.1.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script>
@@ -715,3 +690,4 @@
       </script>
    </body>
 </html>
+
