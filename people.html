@@ -13,48 +13,43 @@
       
       <!-- Custom inline style to fine-tune sidebar width & profile area expansion -->
       <style>
-         /* 1. Make the sidebar navigation bar narrower while keeping readability */
-         /*    The original used span2 (16.667% width). Now we use span1 (8.333%) in the grid,
-               but we also reduce inner padding and font size slightly for better fit */
+         /* Make the sidebar narrow (e.g., 220px) and the content area expand */
+         .row-fluid {
+            display: flex;
+            flex-wrap: wrap;
+         }
          .bs-docs-sidebar {
-            /* ensure no overflow and text remains clean */
-            word-wrap: break-word;
-            overflow-wrap: break-word;
+            width: 220px;          /* fixed narrow width – adjust as needed */
+            flex-shrink: 0;
+            position: relative;    /* keep affix working */
          }
-         .bs-docs-sidebar .nav-list li a {
-            padding: 6px 10px;        /* slightly reduced padding from default */
-            font-size: 0.9rem;        /* crisp but compact */
-            transition: all 0.2s ease;
+         /* The main content column (originally .span9.offset1) gets the remaining space */
+         .row-fluid .span10.offset1 {
+            width: calc(100% - 240px);  /* subtract sidebar width + some gap */
+            margin-left: 20px;          /* small gap between sidebar and content */
+            flex: 1;
          }
-         /* optional: on very small screens, the sidebar will stack, but that's fine */
+         /* Ensure the affix sidebar still works on scroll */
+         .bs-docs-sidenav.affix {
+            position: fixed;
+            top: 20px;
+         }
+         /* Improve readability on very small screens: stack sidebar and content */
          @media (max-width: 767px) {
-            .bs-docs-sidebar .nav-list li a {
-               font-size: 0.85rem;
-               padding: 8px 12px;
+            .row-fluid {
+               display: block;
+            }
+            .bs-docs-sidebar,
+            .row-fluid .span10.offset1 {
+               width: auto;
+               margin-left: 0;
             }
          }
-         
-         /* 2. Ensure profile images and text use the expanded width elegantly */
-         /*    The main content column now uses span10 + offset1 => more breathing room */
-         /*    Each profile row uses span3 for thumb and span9 for bio; extra space makes bios flow better */
-         .row-fluid [class*="span"] .thumbnail img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+         /* Optional: fine-tune the sidebar link appearance */
+         .bs-docs-sidebar .nav-list li a {
+            padding: 4px 8px;
+            font-size: 0.9rem;
          }
-         /* adjust address / email lines to wrap gracefully */
-         .row-fluid .span9 p, .row-fluid .span9 h4 {
-            word-break: break-word;
-         }
-         /* keep consistent spacing between profile sections */
-         section .row-fluid {
-            margin-bottom: 1.2rem;
-         }
-         /* optional: fine tune offset gap for better symmetry */
-         .row-fluid .offset1:first-child {
-            margin-left: 2.564102564102564%;  /* refine gap to give slightly more content width but keep visual separation */
-         }
-         /* Ultimately the sidebar is narrower (span1) and profiles occupy a wider column */
       </style>
    </head>
    <body>
