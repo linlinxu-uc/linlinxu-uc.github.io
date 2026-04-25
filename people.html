@@ -10,6 +10,41 @@
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
       <link href="css/theme.css" rel="stylesheet">
+
+
+         <style>
+              /* Make sidebar narrower */
+              #navparent {
+                width: 120px !important;   /* adjust width here */
+              }
+            
+              /* Reduce padding inside sidebar */
+              .bs-docs-sidebar {
+                padding: 5px;
+              }
+            
+              /* Style the list */
+              .bs-docs-sidenav {
+                list-style: none;
+                padding-left: 0;
+              }
+            
+              /* Make links tighter and cleaner */
+              .bs-docs-sidenav li a {
+                display: block;
+                padding: 4px 6px;
+                font-size: 13px;
+                text-decoration: none;
+                color: #333;
+              }
+            
+              /* Hover effect */
+              .bs-docs-sidenav li a:hover {
+                background-color: #f0f0f0;
+                border-radius: 4px;
+              }
+      </style>
+      
    </head>
    <body>
       <div class="container">
@@ -38,11 +73,12 @@
          <hr>
          <div class="row-fluid">
             
+
             <div class="span2 bs-docs-sidebar" id="navparent">
-               <ul class="nav nav-list bs-docs-sidenav" data-spy="affix" data-offset-top="200" data-offset-bottom="260">
-                  <li><a href="#members"> Members </a></li>
-                  <li><a href="#cosupervise">External Members</a></li>
-               </ul>
+              <ul class="nav nav-list bs-docs-sidenav" data-spy="affix" data-offset-top="200" data-offset-bottom="260">
+                <li><a href="#members">Members</a></li>
+                <li><a href="#cosupervise">External Members</a></li>
+              </ul>
             </div>
             
             <div class="span9 offset1">
