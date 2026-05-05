@@ -154,14 +154,14 @@
       </li>
 
       <li style="list-style:none;">
-        <a href="https://www.youtube.com/embed/Oi0b-TQAIjA?autoplay=1&mute=1&loop=1&playlist=Oi0b-TQAIjA"
+        <a href="https://www.youtube.com/watch?v=Oi0b-TQAIjA"
            class="thumbnail video-card youtube-video"
            title="Pan-Arctic sea ice mosaic video">
           <img src="https://img.youtube.com/vi/Oi0b-TQAIjA/hqdefault.jpg"
                alt="YouTube video thumbnail">
           <div class="play-overlay">▶</div>
         </a>
-
+      
         <p class="caption">
           Our tailor-designed high-resolution transformer model can accurately detect cracks in the ice pack.
         </p>
@@ -235,7 +235,8 @@
       var videoId = getYouTubeId(this.href);
 
       openModal(
-        '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&vq=hd1080" ' +
+        '<iframe src="https://www.youtube.com/embed/' + videoId +
+        '?autoplay=1&mute=1&loop=1&playlist=' + videoId + '&hl=en" ' +
         'frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>'
       );
     });
