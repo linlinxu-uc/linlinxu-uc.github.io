@@ -17,6 +17,10 @@
   <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
   <link href="css/theme.css" rel="stylesheet">
 
+  <!-- Blueimp Gallery CSS: only used for imagegallery2 -->
+  <link href="css/blueimp-gallery.min.css" rel="stylesheet">
+  <link href="css/blueimp-gallery-video.css" rel="stylesheet">
+
   <style>
     .video-card {
       width:300px;
@@ -91,6 +95,17 @@
 
 <body>
 
+<!-- Blueimp Gallery popup container: only triggered by imagegallery2 -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+  <div class="slides"></div>
+  <h3 class="title">Gallery</h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
 <div class="container">
 
   <header class="jumbotron subhead" id="overview">
@@ -117,14 +132,13 @@
     </div>
   </div>
 
+  <!-- imagegallery1: keeps current custom video modal behavior -->
   <section id="imagegallery1">
     <div class="page-header">
       <h3>Pan-Arctic sea ice mapping</h3>
     </div>
 
     <ul class="thumbnails da-thumbs" style="display:flex; gap:3px;">
-
-
       <li style="list-style:none;">
         <a href="https://www.youtube.com/watch?v=rcfli-XRfmw"
            class="thumbnail video-card youtube-video"
@@ -161,45 +175,55 @@
                alt="YouTube video thumbnail">
           <div class="play-overlay">▶</div>
         </a>
-      
+
         <p class="caption">
           Our tailor-designed high-resolution transformer model can accurately detect cracks in the ice pack.
         </p>
       </li>
-
     </ul>
   </section>
 
+  <!-- imagegallery2: uses Blueimp Gallery -->
   <section id="imagegallery2">
     <div class="page-header">
-       <h3>Image Gallery 2</h3>
+      <h3>Image Gallery 2</h3>
     </div>
+
     <div class="row-fluid">
-       <ul class="thumbnails da-thumbs">
-          <li class="span4">
-             <a title="Tortor vitae purus 2018"  href="images/you-x-ventures-studio.jpg" class="thumbnail" >
-             <img alt="" src="images/you-x-ventures-studio.jpg" style="width: 187px; height: 125px;">            
-             </a>
-             <p class="caption"> Tortor vitae purus 2018 </p>
-          </li>
-          <li class="span4">
-             <a title="Varius duis at consectetur lorem donec massa." href="images/arlington-research.jpg" class="thumbnail" >
-             <img alt="" src="images/arlington-research.jpg" style="width: 187px; height: 125px;">
-             </a>
-             <p class="caption"> Varius duis at consectetur lorem donec massa </p>
-          </li>
-          <li class="span4">
-             <a title="Tortor vitae purus 2018." href="images/lab-room.jpg" class="thumbnail" >
-             <img alt="" src="images/lab-room.jpg" style="width: 187px; height: 125px;">
-             </a>
-             <p class="caption"> Tortor vitae purus 2018 </p>
-          </li>
-       </ul>
+      <ul class="thumbnails da-thumbs">
+        <li class="span4">
+          <a title="Tortor vitae purus 2018"
+             href="images/you-x-ventures-studio.jpg"
+             class="thumbnail">
+            <img alt="" src="images/you-x-ventures-studio.jpg" style="width:187px; height:125px;">
+          </a>
+          <p class="caption">Tortor vitae purus 2018</p>
+        </li>
+
+        <li class="span4">
+          <a title="Varius duis at consectetur lorem donec massa."
+             href="images/arlington-research.jpg"
+             class="thumbnail">
+            <img alt="" src="images/arlington-research.jpg" style="width:187px; height:125px;">
+          </a>
+          <p class="caption">Varius duis at consectetur lorem donec massa</p>
+        </li>
+
+        <li class="span4">
+          <a title="Tortor vitae purus 2018."
+             href="images/lab-room.jpg"
+             class="thumbnail">
+            <img alt="" src="images/lab-room.jpg" style="width:187px; height:125px;">
+          </a>
+          <p class="caption">Tortor vitae purus 2018</p>
+        </li>
+      </ul>
     </div>
- </section>
+  </section>
 
 </div>
 
+<!-- Custom video modal for imagegallery1 -->
 <div id="videoModal">
   <div id="videoModalContent">
     <span id="closeModal">&times;</span>
@@ -240,6 +264,9 @@
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
+<!-- Blueimp Gallery JS: only triggered for imagegallery2 -->
+<script src="js/blueimp-gallery.min.js"></script>
+
 <script>
   function getYouTubeId(url) {
     var match = url.match(/[?&]v=([^&]+)/);
@@ -256,6 +283,7 @@
     document.getElementById("videoModal").style.display = "none";
   }
 
+  // imagegallery1: YouTube videos use your custom modal
   document.querySelectorAll(".youtube-video").forEach(function(link) {
     link.addEventListener("click", function(e) {
       e.preventDefault();
@@ -289,6 +317,29 @@
     if (e.target === this) {
       closeModal();
     }
+  };
+
+  // imagegallery2 only: images use Blueimp Gallery
+  document.getElementById('imagegallery2').onclick = function(event) {
+    event = event || window.event;
+
+    var target = event.target || event.srcElement;
+    var link = target.src ? target.parentNode : target;
+
+    if (!link || link.tagName !== 'A') {
+      return;
+    }
+
+    event.preventDefault();
+
+    var options = {
+      index: link,
+      event: event
+    };
+
+    var links = this.getElementsByTagName('a');
+
+    blueimp.Gallery(links, options);
   };
 </script>
 
